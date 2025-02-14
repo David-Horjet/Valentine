@@ -11,7 +11,7 @@ export default function Home() {
       >
         Start My Search
       </Link>
-      <span className="text-white text-sm">Made with hatred by Horjet 🙂</span>
+      <span className="text-sm">Made with hatred by Horjet 🙂</span>
     </main>
   )
 }
