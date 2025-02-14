@@ -59,7 +59,7 @@ export default function Result() {
   const [loadingStep, setLoadingStep] = useState(0)
   const [matchName, setMatchName] = useState("")
   const [rejectionMessage, setRejectionMessage] = useState("")
-  const [meme, setMeme] = useState("")
+  const [meme, setMeme] = useState(meme1)
 
   useEffect(() => {
     const names = gender === "male" ? femaleNames : maleNames
