@@ -14,7 +14,7 @@ export default function Find() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <main className="flex min-h-screen flex-col items-center justify-center px-4 py-20 md:p-24">
       <h1 className="text-3xl font-bold mb-8">Enter Your Details</h1>
       <form onSubmit={handleSubmit} className="w-full max-w-sm">
         <div className="mb-4">
