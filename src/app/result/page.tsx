@@ -4,9 +4,16 @@ import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
+import meme1 from "../../assets/boy.jpeg"
+import meme2 from "../../assets/eba.jpeg"
+import meme3 from "../../assets/ebao.jpeg"
+import meme4 from "../../assets/messi.jpeg"
+import meme5 from "../../assets/sabbi.jpeg"
+import meme6 from "../../assets/strong-eba.jpeg"
+import meme7 from "../../assets/warm-eba.jpeg"
 
-const femaleNames = ["Sarah", "Linda", "Ada", "Emma", "Olivia", "Sophia"]
-const maleNames = ["David", "Chinedu", "Emeka", "James", "Michael", "Daniel"]
+const femaleNames = ["Ada", "Sarah", "Linda", "Blessing", "Chiamaka", "Jennifer", "Sophia", "Joy", "Aisha", "Tolu", "Kemi", "Hannah", "Nkechi", "Mariam", "Bolanle", "Stella", "Ifeoma", "Vivian", "Naomi", "Sandra"]
+const maleNames = ["Emeka", "Chinedu", "David", "Michael", "Tunde", "Sola", "Francis", "Kunle", "Charles", "Victor", "Uche", "Segun", "Paul", "Ibrahim", "Deji", "Collins", "Femi", "Kingsley", "Joshua", "Henry"]
 
 const loadingMessages = [
   "Matching you with {name}...",
@@ -18,13 +25,31 @@ const loadingMessages = [
 ]
 
 const rejectionMessages = [
-  "Valentine loading failed. Try again in 2026.",
-  "No match found. Eba and groundnut soup is your fate.",
-  "Your soulmate is waiting... in another universe.",
-  "Your love request was rejected by Solana blockchain.",
+  "No match found. Focus on your career.",
+  "Your love request was denied. Go and gym.",
+  "Even Google Maps can’t find love for you.",
+  "We checked… even your ancestors are single.",
+  "Your soulmate is in your dreams. Go back to sleep.",
+  "Love is in the air, but you forgot to breathe.",
+  "Rejection successful. Please try again in 2030.",
+  "Your Valentine application has been declined. Eba is waiting.",
+  "We searched everywhere… even your village people refused.",
+  "Your match ran away. Try again after washing plate.",
+  "The best Valentine for you is your phone charger.",
+  "Sorry, but even your shadow left you.",
+  "We found a match, but they said ‘God forbid’.",
+  "This is not heartbreak, this is heartbreak pro max.",
+  "No Valentine? Don’t worry, food will never leave you.",
+  "Even your crush is matching with someone else right now.",
+  "Our AI tried, but even it couldn’t find hope for you.",
+  "Try again next year, maybe love will be cheaper.",
+  "Love is not your calling. Maybe carpentry is.",
+  "Your last seen was 1 minute ago. Even loneliness is tired of you."
 ]
 
-const memes = ["/memes/meme1.jpg", "/memes/meme2.jpg", "/memes/meme3.jpg", "/memes/meme4.jpg"]
+const memes = [
+  meme1, meme2, meme3, meme4, meme5, meme6, meme7
+]
 
 export default function Result() {
   const searchParams = useSearchParams()
@@ -59,7 +84,7 @@ export default function Result() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 text-center">
-      <h1 className="text-3xl font-bold mb-8">Finding Your Valentine</h1>
+      <h1 className="text-3xl font-bold mb-8">Finding Your Valentine... Hang on {name} 😊</h1>
       {loadingStep < loadingMessages.length && <p className="text-xl mb-4">{currentLoadingMessage}</p>}
       {rejectionMessage && (
         <>
@@ -82,4 +107,3 @@ export default function Result() {
     </main>
   )
 }
-
