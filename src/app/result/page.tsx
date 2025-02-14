@@ -130,7 +130,7 @@ const ResultContent = () => {
   );
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 text-center">
+    <main className="flex min-h-screen flex-col items-center justify-center px-4 py-20 md:p-24 text-center">
       <h1 className="text-3xl font-bold mb-8">
         Finding Your Valentine... Hang on {name} 😊
       </h1>
