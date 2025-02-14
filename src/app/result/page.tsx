@@ -91,7 +91,7 @@ const rejectionMessages = [
 
 const memes = [meme1, meme2, meme3, meme4, meme5, meme6, meme7];
 
-export default function Result() {
+const ResultContent = () => {
   const searchParams = useSearchParams();
   const name = searchParams.get("name");
   const gender = searchParams.get("gender");
@@ -130,35 +130,43 @@ export default function Result() {
   );
 
   return (
-    <Suspense fallback={<p className="text-xl mb-4">Loading...</p>}>
-      <main className="flex min-h-screen flex-col items-center justify-center p-24 text-center">
-        <h1 className="text-3xl font-bold mb-8">
-          Finding Your Valentine... Hang on {name} 😊
-        </h1>
-        {loadingStep < loadingMessages.length && (
-          <p className="text-xl mb-4">{currentLoadingMessage}</p>
-        )}
-        {rejectionMessage && (
-          <>
-            <p className="text-2xl font-bold mb-8 text-red-600">
-              {rejectionMessage}
-            </p>
-            <Image
-              src={meme || "/placeholder.svg"}
-              alt="Funny meme"
-              width={400}
-              height={400}
-              className="rounded-lg shadow-lg mb-8"
-            />
-            <Link
-              href="/"
-              className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full text-lg transition-colors duration-300"
-            >
-              Try Again
-            </Link>
-          </>
-        )}
-      </main>
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 text-center">
+      <h1 className="text-3xl font-bold mb-8">
+        Finding Your Valentine... Hang on {name} 😊
+      </h1>
+      {loadingStep < loadingMessages.length && (
+        <p className="text-xl mb-4">{currentLoadingMessage}</p>
+      )}
+      {rejectionMessage && (
+        <>
+          <p className="text-2xl font-bold mb-8 text-red-600">
+            {rejectionMessage}
+          </p>
+          <Image
+            src={meme || "/placeholder.svg"}
+            alt="Funny meme"
+            width={400}
+            height={400}
+            className="rounded-lg shadow-lg mb-8"
+          />
+          <Link
+            href="/"
+            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full text-lg transition-colors duration-300"
+          >
+            Try Again
+          </Link>
+        </>
+      )}
+    </main>
+  );
+};
+
+const Result = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ResultContent />
     </Suspense>
   );
-}
+};
+
+export default Result;
